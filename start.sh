@@ -3,7 +3,6 @@
 addgroup -g ${GID} s2s
 adduser -h /data -s /bin/sh -D -G s2s -u ${UID} s2s
 
-
 cat > /splatnet2statink/config.txt <<__EOF__
 {
     "api_key": "${STATINK_API_KEY}",
@@ -11,7 +10,6 @@ cat > /splatnet2statink/config.txt <<__EOF__
     "user_lang": "${USER_LANG}"
 }
 __EOF__
-
 
 chown -R s2s:s2s /splatnet2statink
 

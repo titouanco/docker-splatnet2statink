@@ -1,4 +1,4 @@
-FROM python:2-alpine3.7
+FROM python:3-alpine3.7
 LABEL maintainer "Titouan Condé <eownis+docker@titouan.co>"
 LABEL org.label-schema.name="splatnet2statink"
 LABEL org.label-schema.vcs-url="https://git.titouan.co/eownis/docker-splatnet2statink"
@@ -9,8 +9,9 @@ ENV UID="991" \
     GID="991"
 
 RUN apk add --no-cache git runit tini \
-    && pip install requests msgpack-python \
     && git clone --depth 1 --branch $S2S_VERSION https://github.com/frozenpandaman/splatnet2statink.git /splatnet2statink \
+    && cd /splatnet2statink \
+    && pip install -r requirements.txt \
     && apk del git
 
 COPY start.sh /usr/bin/start.sh
