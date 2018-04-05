@@ -8,7 +8,7 @@ ARG S2S_VERSION=master
 ENV UID="991" \
     GID="991"
 
-RUN apk add --no-cache git runit tini \
+RUN apk add --no-cache git libjpeg runit tini zlib \
     && git clone --depth 1 --branch $S2S_VERSION https://github.com/frozenpandaman/splatnet2statink.git /splatnet2statink \
     && cd /splatnet2statink \
     && pip install -r requirements.txt \
