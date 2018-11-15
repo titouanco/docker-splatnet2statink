@@ -1,7 +1,7 @@
 FROM python:3-alpine3.8
-LABEL maintainer "Titouan Condé <eownis+docker@titouan.co>"
+LABEL maintainer "Titouan Condé <hi+docker@titouan.co>"
 LABEL org.label-schema.name="splatnet2statink"
-LABEL org.label-schema.vcs-url="https://git.titouan.co/eownis/docker-splatnet2statink"
+LABEL org.label-schema.vcs-url="https://code.titouan.co/titouan/docker-splatnet2statink"
 
 ARG S2S_VERSION=master
 
