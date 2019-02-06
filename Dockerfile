@@ -1,4 +1,4 @@
-FROM python:3-alpine3.8
+FROM python:3-alpine3.9
 LABEL maintainer "Titouan Condé <hi+docker@titouan.co>"
 LABEL org.label-schema.name="splatnet2statink"
 LABEL org.label-schema.vcs-url="https://code.titouan.co/titouan/docker-splatnet2statink"
