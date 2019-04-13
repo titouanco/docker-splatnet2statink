@@ -1,7 +1,20 @@
-pipeline:
-  docker:
-    image: plugins/docker
-    repo: eownis/splatnet2statink
-    storage_driver: overlay2
-    secrets: [ docker_username, docker_password ]
+---
+kind: pipeline
+name: splatnet2statink-master
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: docker
+  image: plugins/docker
+  settings:
+    password:
+      from_secret: docker_password
+    repo: titouanco/splatnet2statink
     tags: latest
+    username:
+      from_secret: docker_username
+
+...
